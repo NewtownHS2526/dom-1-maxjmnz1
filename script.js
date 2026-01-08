@@ -26,16 +26,34 @@
  */
 
 console.log("script running");
+ let totatInCents = 0;
 
-// TODO: Fix this bug - should select #apple, not #banana!
-const appleButton = document.querySelector("#banana");
-
-console.log(appleButton);
-
+// Select buttons
+const appleButton = document.querySelector("#apple");
+const bananaButton = document.querySelector("#banana");
+const mangoButton = document.querySelector("#mango");
+const shoppingCart = document.querySelector("#shopping-cart");
+const totalSpan = document.querySelector("#total-span");
+console.log(appleButton, bananaButton, mangoButton, shoppingCart, totalSpan);
+const updateTotal = (priceInCents) => {
+  totatInCents += priceInCents;
+  totalSpan.textContent = (totatInCents / 100).toFixed(2);
+}
 // TODO: Rename this function to something more generic like "addItem"
-const addApple = () => {
-  alert("apple button under construction");
+const addItem = (item, price) => {
+  alert(`${item} button under construction`);
 };
 
 // TODO: Add event listeners for all three buttons
-appleButton.addEventListener("click", addApple);
+const addApple = () => { 
+  shoppingCart.innerHTML += `<div>Apple - $0.75</div>`;
+  totalinCents += 75;
+  updateTotal(75);
+};
+appleButton.addEventListener("click", addApple) 
+
+const addBanana= () => {queueMicrotask
+  shoppingCart.innerHTML += `<div>Banana - $0.30</div>`;
+  totalinCents += 30;
+  updateTotal(30);
+}
